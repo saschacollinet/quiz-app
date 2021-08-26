@@ -16,26 +16,23 @@
         <img src="./resources/images/logoneu.svg" alt="Quiz Time" class="header__img">
     </header>
     <main class="main">
-        <section class="card">
-            <button class="card__bookmark--marked" aria-label="Bookmarked"></button>
-            <h2 class="card__question">What is BEM?</h2>
-            <button class="card__button">Show Answer</button>
-            <p class="card__answer card__answer--hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                adipisci maiores magnam! Eos repellendus minus unde eveniet quasi veniam perspiciatis doloremque
-                similique! Et mollitia repellendus hic distinctio minima. Numquam, esse.</p>
-            <ul class="tags">
-                <li class="tags__item">BEM</li>
-                <li class="tags__item">CSS</li>
-                <li class="tags__item">Structure</li>
-            </ul>
+        <section class="add">
+            <h2 class="add__title">Add a question!</h2>
+            <form action="" class="add__submit">
+                <label for="question">What is your question:</label>
+                <input type="text" name="question" id="question">
+                <label for="answer">What is your answer:</label>
+                <textarea name="answer" id="answer" cols="30" rows="10"></textarea>
+                <button type="submit" class="add__button">Submit</button>
+            </form>
         </section>
     </main>
     <footer class="footer">
         <nav class="footer__nav">
             <a href="/index.html" class="footer__link"><img src="./resources/images/home-outline.svg" alt="Home"></a>
-            <a href="/bookmarks.html" class="footer__link active"><img
-                    src="./resources/images/bookmark-multiple-outline.svg" alt="Bookmarks"></a>
-            <a href="/addquestion.html" class="footer__link"><img src="./resources/images/pencil-outline.svg"
+            <a href="/bookmarks.html" class="footer__link"><img src="./resources/images/bookmark-multiple-outline.svg"
+                    alt="Bookmarks"></a>
+            <a href="/addquestion.html" class="footer__link active"><img src="./resources/images/pencil-outline.svg"
                     alt="Add question"></a>
             <a href="" class="footer__link"><img src="./resources/images/account-outline.svg" alt="Profile"></a>
         </nav>

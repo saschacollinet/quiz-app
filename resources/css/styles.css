@@ -1,5 +1,7 @@
-@import "./components/_base.css";
-@import "./components/header.css";
-@import "./components/main.css";
-@import "./components/card.css";
-@import "./components/footer.css";
+@import './components/_base.css';
+@import './components/header.css';
+@import './components/main.css';
+@import './components/footer.css';
+@import './components/card.css';
+@import './components/tags.css';
+@import './components/add.css';
