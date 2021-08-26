@@ -13,11 +13,11 @@
 
 <body>
     <header class="header">
-        <img src="./resources/images/logo.svg" alt="Quizzly" class="header__img">
+        <img src="./resources/images/logoneu.svg" alt="Quiz Time" class="header__img">
     </header>
     <main class="main">
         <section class="card">
-            <button class="card__bookmark"></button>
+            <button class="card__bookmark" aria-label="Bookmark"></button>
             <h2 class="card__question">What is BEM?</h2>
             <button class="card__button">Show Answer</button>
             <p class="card__answer card__answer--hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
@@ -30,7 +30,7 @@
             </ul>
         </section>
         <section class="card">
-            <button class="card__bookmark"></button>
+            <button class="card__bookmark--marked" aria-label="Bookmarked"></button>
             <h2 class="card__question">What is BEM?</h2>
             <button class="card__button">Show Answer</button>
             <p class="card__answer card__answer--hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
@@ -43,7 +43,7 @@
             </ul>
         </section>
         <section class="card">
-            <button class="card__bookmark"></button>
+            <button class="card__bookmark" aria-label="Bookmark"></button>
             <h2 class="card__question">What is BEM?</h2>
             <button class="card__button">Show Answer</button>
             <p class="card__answer card__answer--hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
@@ -58,11 +58,13 @@
     </main>
     <footer class="footer">
         <nav class="footer__nav">
-            <a href="/index.html" class="footer__link active"><img src="./resources/images/home-outline.svg" alt=""></a>
+            <a href="/index.html" class="footer__link active"><img src="./resources/images/home-outline.svg"
+                    alt="Home"></a>
             <a href="/bookmarks.html" class="footer__link"><img src="./resources/images/bookmark-multiple-outline.svg"
-                    alt=""></a>
-            <a href="" class="footer__link"><img src="./resources/images/pencil-outline.svg" alt=""></a>
-            <a href="" class="footer__link"><img src="./resources/images/account-outline.svg" alt=""></a>
+                    alt="Bookmarks"></a>
+            <a href="/addquestion.html" class=" footer__link"><img src="./resources/images/pencil-outline.svg"
+                    alt="Add question"></a>
+            <a href="" class="footer__link"><img src="./resources/images/account-outline.svg" alt="Profile"></a>
         </nav>
     </footer>
 </body>

@@ -1,79 +1,64 @@
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 25px;
-    padding: 5px;
-    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-    position: relative;
+.card,
+.add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  padding: 5px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  position: relative;
 }
 
 .card__bookmark {
-    position: absolute;
-    top: -7px;
-    right: 15px;
-    background-image: url(/resources/images/bookmark-outline.svg);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    border: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
+  position: absolute;
+  top: -7px;
+  right: 15px;
+  background-image: url(/resources/images/bookmark-outline.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
 .card__bookmark--marked {
-    position: absolute;
-    top: -7px;
-    right: 15px;
-    background-image: url(/resources/images/bookmark.svg);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    border: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
+  position: absolute;
+  top: -7px;
+  right: 15px;
+  background-image: url(/resources/images/bookmark.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
 .card__question {
-    margin-top: 15px;
-    font-size: 1.4rem;
-    color: #426696;
+  margin-top: 10px;
+  color: #426696;
 }
 
 .card__button {
-    margin-top: 20px;
-    background-color: white;
-    color: #658ec6;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
+  margin-top: 20px;
+  background-color: white;
+  color: #658ec6;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
 }
 
 .card__answer {
-    color: #658ec6;
-}
-
-.tags {
-    list-style-type: none;
-    align-self: center;
-    margin-top: 20px;
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.tags__item {
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    background-color: white;
-    color: #658ec6;
-    border-radius: 10px;
-    font-size: .6rem;
-    margin-right: 5px;
+  color: #658ec6;
 }
