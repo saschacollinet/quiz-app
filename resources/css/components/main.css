@@ -1,0 +1,9 @@
+.main {
+    margin-top: 70px;
+    margin-bottom: 60px;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    font-family: "Poppins", sans-serif;
+}
