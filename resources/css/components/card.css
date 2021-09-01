@@ -61,4 +61,9 @@
 
 .card__answer {
   color: #658ec6;
+  display: none;
+}
+
+.card__answer.card__answer--show {
+  display: block;
 }
