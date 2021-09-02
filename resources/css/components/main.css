@@ -5,9 +5,8 @@
   background-image: linear-gradient(to right top, #65dfc9 0%, #6cdbeb 100%);
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  display: none;
 }
 
-.main.main--show {
-  display: block;
+.main.main--hidden {
+  display: none;
 }

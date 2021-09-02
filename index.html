@@ -11,10 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./resources/css/styles.css" />
-    <script src="/javascript.js" defer></script>
+    <script src="/main.js" defer></script>
   </head>
 
   <body>
+    <!-- header -->
+
     <header class="header">
       <img
         src="./resources/images/logoneu.svg"
@@ -23,9 +25,9 @@
       />
     </header>
 
-    <!-- main__home -->
+    <!-- main home -->
 
-    <main class="main main--show" id="main__home">
+    <main class="main" id="main__home">
       <section class="card">
         <button class="card__bookmark" aria-label="Bookmark"></button>
         <h2 class="card__question">What is BEM?</h2>
@@ -76,9 +78,9 @@
       </section>
     </main>
 
-    <!-- main home end-->
+    <!-- main bookmarks -->
 
-    <main class="main" id="main__bookmarks">
+    <main class="main main--hidden" id="main__bookmarks">
       <section class="card">
         <button class="card__bookmark--marked" aria-label="Bookmarked"></button>
         <h2 class="card__question">What is BEM?</h2>
@@ -96,7 +98,10 @@
         </ul>
       </section>
     </main>
-    <main class="main" id="main__create">
+
+    <!-- main create -->
+
+    <main class="main main--hidden" id="main__create">
       <section class="add">
         <h2 class="add__title">Add a question!</h2>
         <form action="" class="add__submit">
@@ -108,9 +113,15 @@
         </form>
       </section>
     </main>
-    <main class="main" id="main__profile">
+
+    <!-- main profile -->
+
+    <main class="main main--hidden" id="main__profile">
       <h2 class="profile__title">Profile</h2>
     </main>
+
+    <!-- footer -->
+
     <footer class="footer">
       <nav class="footer__nav">
         <button class="footer__button active" id="footer__home">
