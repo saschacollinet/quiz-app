@@ -31,7 +31,7 @@
   height: 30px;
 }
 
-.card__bookmark--marked {
+.card__bookmark.card__bookmark--marked {
   position: absolute;
   top: -7px;
   right: 15px;
@@ -59,11 +59,19 @@
   padding: 10px 20px;
 }
 
-.card__answer {
+.card__button.card__button--hide {
+  margin-top: 20px;
+  background-color: white;
   color: #658ec6;
-  display: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
 }
 
-.card__answer.card__answer--show {
-  display: block;
+.card__answer {
+  color: #658ec6;
+}
+
+.card__answer.card__answer--hidden {
+  display: none;
 }
