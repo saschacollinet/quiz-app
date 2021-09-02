@@ -2,93 +2,91 @@
 
 // main sections
 
-const mainHome = document.querySelector('#main__home')
-const mainBookmarks = document.querySelector('#main__bookmarks')
-const mainCreate = document.querySelector('#main__create')
-const mainProfile = document.querySelector('#main__profile')
+const mainHome = getEl('#main__home')
+const mainBookmarks = getEl('#main__bookmarks')
+const mainCreate = getEl('#main__create')
+const mainProfile = getEl('#main__profile')
 
 // footer navigation buttons
 
-const buttonHome = document.querySelector('#footer__home')
-const buttonBookmarks = document.querySelector('#footer__bookmarks')
-const buttonCreate = document.querySelector('#footer__create')
-const buttonProfile = document.querySelector('#footer__profile')
+const buttonHome = getEl('#footer__home')
+const buttonBookmarks = getEl('#footer__bookmarks')
+const buttonCreate = getEl('#footer__create')
+const buttonProfile = getEl('#footer__profile')
+
+// get element function
+
+function getEl(selector) {
+  const el = document.querySelector(selector)
+  return el
+}
 
 // navigation events
 
-buttonHome.addEventListener('click', () => {
-  mainHome.classList.remove('main--hidden')
-  mainBookmarks.classList.add('main--hidden')
-  mainCreate.classList.add('main--hidden')
-  mainProfile.classList.add('main--hidden')
+// hide all main elements and remove active state on all buttons
 
-  buttonHome.classList.add('active')
-  buttonBookmarks.classList.remove('active')
-  buttonCreate.classList.remove('active')
-  buttonProfile.classList.remove('active')
-})
+function hideAll() {
+  const mainElementArray = document.querySelectorAll('.main')
+  mainElementArray.forEach((mainElelement, index) => {
+    mainElelement.classList.add('main--hidden')
+  })
 
-buttonBookmarks.addEventListener('click', () => {
-  mainHome.classList.add('main--hidden')
-  mainBookmarks.classList.remove('main--hidden')
-  mainCreate.classList.add('main--hidden')
-  mainProfile.classList.add('main--hidden')
+  const footerButtonElementArray = document.querySelectorAll('.footer__button')
+  footerButtonElementArray.forEach((footerButtonElement, index) => {
+    footerButtonElement.classList.remove('active')
+  })
+}
 
-  buttonHome.classList.remove('active')
-  buttonBookmarks.classList.add('active')
-  buttonCreate.classList.remove('active')
-  buttonProfile.classList.remove('active')
-})
+// add eventlistener to each button which then executes hideAll() and removes/adds necessary classes to relevant element
 
-buttonCreate.addEventListener('click', () => {
-  mainHome.classList.add('main--hidden')
-  mainBookmarks.classList.add('main--hidden')
-  mainCreate.classList.remove('main--hidden')
-  mainProfile.classList.add('main--hidden')
+function addButtonEventListener(name) {
+  getEl(`#footer__${name}`).addEventListener('click', () => {
+    hideAll()
+    getEl(`#main__${name}`).classList.remove('main--hidden')
+    getEl(`#footer__${name}`).classList.add('active')
+  })
+}
 
-  buttonHome.classList.remove('active')
-  buttonBookmarks.classList.remove('active')
-  buttonCreate.classList.add('active')
-  buttonProfile.classList.remove('active')
-})
+addButtonEventListener('home') // partial (name) of the id
+addButtonEventListener('bookmarks')
+addButtonEventListener('create')
+addButtonEventListener('profile')
 
-buttonProfile.addEventListener('click', () => {
-  mainHome.classList.add('main--hidden')
-  mainBookmarks.classList.add('main--hidden')
-  mainCreate.classList.add('main--hidden')
-  mainProfile.classList.remove('main--hidden')
+// answer & boomark buttons
 
-  buttonHome.classList.remove('active')
-  buttonBookmarks.classList.remove('active')
-  buttonCreate.classList.remove('active')
-  buttonProfile.classList.add('active')
-})
+// get all elements function
 
-// main home
+function getElAll(selector) {
+  const el = document.querySelectorAll(selector)
+  return el
+}
 
-// show answer button one
+// get card bookmarks
 
-const buttonAnswerOne = document.querySelector('#card__buttonone')
-const AnswerOne = document.querySelector('#card__answerone')
+const bookmarks = getElAll('.card__bookmark')
 
-buttonAnswerOne.addEventListener('click', () => {
-  AnswerOne.classList.toggle('card__answer--show')
-})
+// get card answer buttons
 
-// show answer button two
+const answerButtons = getElAll('.card__button')
 
-const buttonAnswerTwo = document.querySelector('#card__buttontwo')
-const AnswerTwo = document.querySelector('#card__answertwo')
+// add eventlistener to answer buttons which changes the style of the relevant button and toogles the class of the next element sibling which is the p tag with the answer
 
-buttonAnswerTwo.addEventListener('click', () => {
-  AnswerTwo.classList.toggle('card__answer--show')
-})
+for (let i = 0; i < answerButtons.length; i++) {
+  answerButtons[i].addEventListener('click', () => {
+    answerButtons[i].nextElementSibling.classList.toggle('card__answer--hidden')
+    answerButtons[i].classList.toggle('card__button--hide')
+    if (answerButtons[i].innerText === 'Hide answer') {
+      answerButtons[i].innerText = 'Show answer'
+    } else {
+      answerButtons[i].innerText = 'Hide answer'
+    }
+  })
+}
 
-// show answer button three
+// add eventlistener to bookmarks buttons which changes the style of the relevant bookmark button
 
-const buttonAnswerThree = document.querySelector('#card__buttonthree')
-const AnswerThree = document.querySelector('#card__answerthree')
-
-buttonAnswerThree.addEventListener('click', () => {
-  AnswerThree.classList.toggle('card__answer--show')
-})
+for (let i = 0; i < bookmarks.length; i++) {
+  bookmarks[i].addEventListener('click', () => {
+    bookmarks[i].classList.toggle('card__bookmark--marked')
+  })
+}

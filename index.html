@@ -32,7 +32,7 @@
         <button class="card__bookmark" aria-label="Bookmark"></button>
         <h2 class="card__question">What is BEM?</h2>
         <button class="card__button" id="card__buttonone">Show Answer</button>
-        <p class="card__answer" id="card__answerone">
+        <p class="card__answer card__answer--hidden" id="card__answerone">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
           adipisci maiores magnam! Eos repellendus minus unde eveniet quasi
           veniam perspiciatis doloremque similique! Et mollitia repellendus hic
@@ -45,10 +45,10 @@
         </ul>
       </section>
       <section class="card">
-        <button class="card__bookmark--marked" aria-label="Bookmarked"></button>
+        <button class="card__bookmark" aria-label="Bookmark"></button>
         <h2 class="card__question">What is BEM?</h2>
         <button class="card__button" id="card__buttontwo">Show Answer</button>
-        <p class="card__answer" id="card__answertwo">
+        <p class="card__answer card__answer--hidden" id="card__answertwo">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
           adipisci maiores magnam! Eos repellendus minus unde eveniet quasi
           veniam perspiciatis doloremque similique! Et mollitia repellendus hic
@@ -64,7 +64,7 @@
         <button class="card__bookmark" aria-label="Bookmark"></button>
         <h2 class="card__question">What is BEM?</h2>
         <button class="card__button" id="card__buttonthree">Show Answer</button>
-        <p class="card__answer" id="card__answerthree">
+        <p class="card__answer card__answer--hidden" id="card__answerthree">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
           adipisci maiores magnam! Eos repellendus minus unde eveniet quasi
           veniam perspiciatis doloremque similique! Et mollitia repellendus hic
@@ -82,7 +82,10 @@
 
     <main class="main main--hidden" id="main__bookmarks">
       <section class="card">
-        <button class="card__bookmark--marked" aria-label="Bookmarked"></button>
+        <button
+          class="card__bookmark card__bookmark--marked"
+          aria-label="Bookmarked"
+        ></button>
         <h2 class="card__question">What is BEM?</h2>
         <button class="card__button">Show Answer</button>
         <p class="card__answer card__answer--hidden">
