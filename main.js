@@ -1,20 +1,26 @@
 // navigation
 
+// main sections
+
 const mainHome = document.querySelector('#main__home')
 const mainBookmarks = document.querySelector('#main__bookmarks')
 const mainCreate = document.querySelector('#main__create')
 const mainProfile = document.querySelector('#main__profile')
+
+// footer navigation buttons
 
 const buttonHome = document.querySelector('#footer__home')
 const buttonBookmarks = document.querySelector('#footer__bookmarks')
 const buttonCreate = document.querySelector('#footer__create')
 const buttonProfile = document.querySelector('#footer__profile')
 
+// navigation events
+
 buttonHome.addEventListener('click', () => {
-  mainHome.classList.add('main--show')
-  mainBookmarks.classList.remove('main--show')
-  mainCreate.classList.remove('main--show')
-  mainProfile.classList.remove('main--show')
+  mainHome.classList.remove('main--hidden')
+  mainBookmarks.classList.add('main--hidden')
+  mainCreate.classList.add('main--hidden')
+  mainProfile.classList.add('main--hidden')
 
   buttonHome.classList.add('active')
   buttonBookmarks.classList.remove('active')
@@ -23,10 +29,10 @@ buttonHome.addEventListener('click', () => {
 })
 
 buttonBookmarks.addEventListener('click', () => {
-  mainHome.classList.remove('main--show')
-  mainBookmarks.classList.add('main--show')
-  mainCreate.classList.remove('main--show')
-  mainProfile.classList.remove('main--show')
+  mainHome.classList.add('main--hidden')
+  mainBookmarks.classList.remove('main--hidden')
+  mainCreate.classList.add('main--hidden')
+  mainProfile.classList.add('main--hidden')
 
   buttonHome.classList.remove('active')
   buttonBookmarks.classList.add('active')
@@ -35,10 +41,10 @@ buttonBookmarks.addEventListener('click', () => {
 })
 
 buttonCreate.addEventListener('click', () => {
-  mainHome.classList.remove('main--show')
-  mainBookmarks.classList.remove('main--show')
-  mainCreate.classList.add('main--show')
-  mainProfile.classList.remove('main--show')
+  mainHome.classList.add('main--hidden')
+  mainBookmarks.classList.add('main--hidden')
+  mainCreate.classList.remove('main--hidden')
+  mainProfile.classList.add('main--hidden')
 
   buttonHome.classList.remove('active')
   buttonBookmarks.classList.remove('active')
@@ -47,16 +53,18 @@ buttonCreate.addEventListener('click', () => {
 })
 
 buttonProfile.addEventListener('click', () => {
-  mainHome.classList.remove('main--show')
-  mainBookmarks.classList.remove('main--show')
-  mainCreate.classList.remove('main--show')
-  mainProfile.classList.add('main--show')
+  mainHome.classList.add('main--hidden')
+  mainBookmarks.classList.add('main--hidden')
+  mainCreate.classList.add('main--hidden')
+  mainProfile.classList.remove('main--hidden')
 
   buttonHome.classList.remove('active')
   buttonBookmarks.classList.remove('active')
   buttonCreate.classList.remove('active')
   buttonProfile.classList.add('active')
 })
+
+// main home
 
 // show answer button one
 
