@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./resources/css/styles.css" />
-    <script src="/main.js" defer></script>
+    <script src="main.js" defer></script>
   </head>
 
   <body>
@@ -30,50 +30,39 @@
     <main class="main" id="main__home">
       <section class="card">
         <button class="card__bookmark" aria-label="Bookmark"></button>
-        <h2 class="card__question">What is BEM?</h2>
-        <button class="card__button" id="card__buttonone">Show Answer</button>
-        <p class="card__answer card__answer--hidden" id="card__answerone">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-          adipisci maiores magnam! Eos repellendus minus unde eveniet quasi
-          veniam perspiciatis doloremque similique! Et mollitia repellendus hic
-          distinctio minima. Numquam, esse.
-        </p>
+        <h2 class="card__question">What nut is used to make marzipan?</h2>
+        <button class="card__button">Show Answer</button>
+        <p class="card__answer card__answer--hidden">Almonds</p>
         <ul class="tags">
-          <li class="tags__item">BEM</li>
-          <li class="tags__item">CSS</li>
-          <li class="tags__item">Structure</li>
+          <li class="tags__item">nature</li>
+          <li class="tags__item">food</li>
+          <li class="tags__item">cooking</li>
         </ul>
       </section>
       <section class="card">
         <button class="card__bookmark" aria-label="Bookmark"></button>
-        <h2 class="card__question">What is BEM?</h2>
-        <button class="card__button" id="card__buttontwo">Show Answer</button>
-        <p class="card__answer card__answer--hidden" id="card__answertwo">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-          adipisci maiores magnam! Eos repellendus minus unde eveniet quasi
-          veniam perspiciatis doloremque similique! Et mollitia repellendus hic
-          distinctio minima. Numquam, esse.
-        </p>
+        <h2 class="card__question">
+          How many letters in the word hippopotamus?
+        </h2>
+        <button class="card__button">Show Answer</button>
+        <p class="card__answer card__answer--hidden">12</p>
         <ul class="tags">
-          <li class="tags__item">BEM</li>
-          <li class="tags__item">CSS</li>
-          <li class="tags__item">Structure</li>
+          <li class="tags__item">nature</li>
+          <li class="tags__item">animals</li>
+          <li class="tags__item">count</li>
         </ul>
       </section>
       <section class="card">
         <button class="card__bookmark" aria-label="Bookmark"></button>
-        <h2 class="card__question">What is BEM?</h2>
-        <button class="card__button" id="card__buttonthree">Show Answer</button>
-        <p class="card__answer card__answer--hidden" id="card__answerthree">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-          adipisci maiores magnam! Eos repellendus minus unde eveniet quasi
-          veniam perspiciatis doloremque similique! Et mollitia repellendus hic
-          distinctio minima. Numquam, esse.
-        </p>
+        <h2 class="card__question">
+          Who did Orlando Bloom play in Pirates Of The Caribbean?
+        </h2>
+        <button class="card__button">Show Answer</button>
+        <p class="card__answer card__answer--hidden">Will Turner</p>
         <ul class="tags">
-          <li class="tags__item">BEM</li>
-          <li class="tags__item">CSS</li>
-          <li class="tags__item">Structure</li>
+          <li class="tags__item">people</li>
+          <li class="tags__item">movies</li>
+          <li class="tags__item">names</li>
         </ul>
       </section>
     </main>
@@ -105,14 +94,34 @@
     <!-- main create -->
 
     <main class="main main--hidden" id="main__create">
-      <section class="add">
-        <h2 class="add__title">Add a question!</h2>
-        <form action="" class="add__submit">
+      <section class="create">
+        <h2 class="create__title">Add a question!</h2>
+        <form action="" class="create__submit" id="create__form">
           <label for="question">What is your question:</label>
-          <input type="text" name="question" id="question" />
+          <input type="text" name="question" id="create__question" />
           <label for="answer">What is your answer:</label>
-          <textarea name="answer" id="answer" cols="30" rows="10"></textarea>
-          <button type="submit" class="add__button">Submit</button>
+          <textarea
+            name="answer"
+            id="create__answer"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <label for="tags">Add tags, seperated by ,</label>
+          <input type="text" name="tags" id="create__tags" />
+          <button
+            type="submit"
+            class="create__button"
+            id="create__button--submit"
+          >
+            Create
+          </button>
+          <button
+            type="reset"
+            class="create__button"
+            id="create__button--reset"
+          >
+            Reset
+          </button>
         </form>
       </section>
     </main>

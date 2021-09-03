@@ -90,3 +90,20 @@ for (let i = 0; i < bookmarks.length; i++) {
     bookmarks[i].classList.toggle('card__bookmark--marked')
   })
 }
+
+// const submitButton = getEL('#create__button--submit')
+
+// function test() {
+// submitButton.addEventListener('click', () => {
+// event.preventDefault()
+// document.getElementById('create__form').submit()
+// document.getElementById('create__form').reset()
+// alert('Do you really want to reset the form?')
+// })
+// }
+
+// const submitButton = getEL('#create__button--submit')
+
+// submitButton.addEventListener('click', () => {
+//   test()
+// })

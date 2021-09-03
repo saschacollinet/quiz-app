@@ -1,5 +1,5 @@
 .card,
-.add {
+.create {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@
   position: absolute;
   top: -7px;
   right: 15px;
-  background-image: url(/resources/images/bookmark-outline.svg);
+  background-image: url(/resources/images/bookmark-multiple-outline.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: 0px 0px;
@@ -35,7 +35,7 @@
   position: absolute;
   top: -7px;
   right: 15px;
-  background-image: url(/resources/images/bookmark.svg);
+  background-image: url(/resources/images/bookmark-multiple.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: 0px 0px;
@@ -48,6 +48,7 @@
 .card__question {
   margin-top: 10px;
   color: #426696;
+  text-align: center;
 }
 
 .card__button {
@@ -70,6 +71,7 @@
 
 .card__answer {
   color: #658ec6;
+  margin-top: 20px;
 }
 
 .card__answer.card__answer--hidden {
