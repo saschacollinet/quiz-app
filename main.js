@@ -1,4 +1,4 @@
-// navigation
+// Get elements
 
 // main sections
 
@@ -13,6 +13,82 @@ const buttonHome = getEl('#footer__home')
 const buttonBookmarks = getEl('#footer__bookmarks')
 const buttonCreate = getEl('#footer__create')
 const buttonProfile = getEl('#footer__profile')
+
+// Card data
+
+const cardData = [
+  {
+    question: 'What nut is used to make marzipan?',
+    answer: 'Almonds',
+    isBookmarked: true,
+    showAnswer: false,
+    tags: ['nature', 'food', 'cooking'],
+  },
+  {
+    question: 'How many letters in the word hippopotamus?',
+    answer: '12',
+    isBookmarked: true,
+    showAnswer: false,
+    tags: ['nature', 'animals', 'count'],
+  },
+  {
+    question: 'Who did Orlando Bloom play in Pirates Of The Caribbean?',
+    answer: 'Will Turner',
+    isBookmarked: true,
+    showAnswer: false,
+    tags: ['people', 'movies', 'names'],
+  },
+  {
+    question:
+      'What is the answer to the ultimate question of life, the universe, and everything?',
+    answer: '42',
+    isBookmarked: true,
+    showAnswer: false,
+    tags: ['fun', 'books', 'pop culture'],
+  },
+]
+
+function renderCard(cardData) {
+  const cardSection = document.createElement('section')
+  cardSection.classList.add('card')
+  mainHome.appendChild(cardSection)
+
+  const cardBookmark = document.createElement('button')
+  cardBookmark.classList.add('card__bookmark')
+  cardBookmark.setAttribute('aria-label', 'Bookmark')
+  cardSection.appendChild(cardBookmark)
+
+  const cardQuestion = document.createElement('h2')
+  cardQuestion.classList.add('card__question')
+  cardQuestion.textContent = cardData.question
+  cardSection.appendChild(cardQuestion)
+
+  const cardButton = document.createElement('button')
+  cardButton.classList.add('card__button')
+  cardButton.textContent = 'Show answer'
+  cardSection.appendChild(cardButton)
+
+  const cardAnswer = document.createElement('p')
+  cardAnswer.classList.add('card__answer')
+  cardAnswer.classList.add('card__answer--hidden')
+  cardAnswer.textContent = cardData.answer
+  cardSection.appendChild(cardAnswer)
+
+  const cardTags = document.createElement('ul')
+  cardTags.classList.add('tags')
+  cardSection.appendChild(cardTags)
+
+  cardData.tags.forEach(tag => {
+    const cardTag = document.createElement('li')
+    cardTag.classList.add('tags__item')
+    cardTag.textContent = tag
+    cardTags.appendChild(cardTag)
+  })
+}
+
+cardData.forEach(element => {
+  renderCard(element)
+})
 
 // get element function
 
@@ -90,20 +166,3 @@ for (let i = 0; i < bookmarks.length; i++) {
     bookmarks[i].classList.toggle('card__bookmark--marked')
   })
 }
-
-// const submitButton = getEL('#create__button--submit')
-
-// function test() {
-// submitButton.addEventListener('click', () => {
-// event.preventDefault()
-// document.getElementById('create__form').submit()
-// document.getElementById('create__form').reset()
-// alert('Do you really want to reset the form?')
-// })
-// }
-
-// const submitButton = getEL('#create__button--submit')
-
-// submitButton.addEventListener('click', () => {
-//   test()
-// })
