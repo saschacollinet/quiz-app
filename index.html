@@ -31,27 +31,7 @@
 
     <!-- main bookmarks -->
 
-    <main class="main main--hidden" id="main__bookmarks">
-      <section class="card">
-        <button
-          class="card__bookmark card__bookmark--marked"
-          aria-label="Bookmarked"
-        ></button>
-        <h2 class="card__question">What is BEM?</h2>
-        <button class="card__button">Show Answer</button>
-        <p class="card__answer card__answer--hidden">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-          adipisci maiores magnam! Eos repellendus minus unde eveniet quasi
-          veniam perspiciatis doloremque similique! Et mollitia repellendus hic
-          distinctio minima. Numquam, esse.
-        </p>
-        <ul class="tags">
-          <li class="tags__item">BEM</li>
-          <li class="tags__item">CSS</li>
-          <li class="tags__item">Structure</li>
-        </ul>
-      </section>
-    </main>
+    <main class="main main--hidden" id="main__bookmarks"></main>
 
     <!-- main create -->
 
@@ -70,7 +50,13 @@
           ></textarea>
           <label for="tags">Add tags, seperated by ,</label>
           <input type="text" name="tags" id="create__tags" />
-          <button
+          <input
+            type="button"
+            class="create__button"
+            id="create__button--submit"
+            value="Create"
+          />
+          <!-- <button
             type="submit"
             class="create__button"
             id="create__button--submit"
@@ -83,7 +69,7 @@
             id="create__button--reset"
           >
             Reset
-          </button>
+          </button> -->
         </form>
       </section>
     </main>

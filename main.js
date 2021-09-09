@@ -1,40 +1,52 @@
-// Get elements
+// get element function
 
-// main sections
+function getEl(selector) {
+  const el = document.querySelector(selector)
+  return el
+}
+
+// get all elements function
+
+function getElAll(selector) {
+  const el = document.querySelectorAll(selector)
+  return el
+}
+
+// get main sections
 
 const mainHome = getEl('#main__home')
 const mainBookmarks = getEl('#main__bookmarks')
 const mainCreate = getEl('#main__create')
 const mainProfile = getEl('#main__profile')
 
-// footer navigation buttons
+// get footer navigation buttons
 
 const buttonHome = getEl('#footer__home')
 const buttonBookmarks = getEl('#footer__bookmarks')
 const buttonCreate = getEl('#footer__create')
 const buttonProfile = getEl('#footer__profile')
 
-// Card data
+// card data
 
-const cardData = [
+const appData = [
   {
     question: 'What nut is used to make marzipan?',
     answer: 'Almonds',
-    isBookmarked: true,
+    isBookmarked: false,
     showAnswer: false,
     tags: ['nature', 'food', 'cooking'],
   },
   {
     question: 'How many letters in the word hippopotamus?',
     answer: '12',
-    isBookmarked: true,
+    isBookmarked: false,
     showAnswer: false,
     tags: ['nature', 'animals', 'count'],
   },
   {
     question: 'Who did Orlando Bloom play in Pirates Of The Caribbean?',
     answer: 'Will Turner',
-    isBookmarked: true,
+    isBookmarked: true, // true for demonstration only
     showAnswer: false,
     tags: ['people', 'movies', 'names'],
   },
@@ -42,19 +54,30 @@ const cardData = [
     question:
       'What is the answer to the ultimate question of life, the universe, and everything?',
     answer: '42',
-    isBookmarked: true,
+    isBookmarked: false,
     showAnswer: false,
     tags: ['fun', 'books', 'pop culture'],
   },
 ]
 
-function renderCard(cardData) {
+// filtered card data for bookmarks
+
+const appDataBookmarked = appData.filter(
+  bookmark => bookmark.isBookmarked == true
+)
+
+// put in cardData (from appData, etc.) and the relevant mainEl (from main sections)
+
+function renderCard(cardData, mainEl) {
   const cardSection = document.createElement('section')
   cardSection.classList.add('card')
-  mainHome.appendChild(cardSection)
+  mainEl.appendChild(cardSection)
 
   const cardBookmark = document.createElement('button')
   cardBookmark.classList.add('card__bookmark')
+  if (cardData.isBookmarked) {
+    cardBookmark.classList.add('card__bookmark--marked')
+  }
   cardBookmark.setAttribute('aria-label', 'Bookmark')
   cardSection.appendChild(cardBookmark)
 
@@ -70,7 +93,9 @@ function renderCard(cardData) {
 
   const cardAnswer = document.createElement('p')
   cardAnswer.classList.add('card__answer')
-  cardAnswer.classList.add('card__answer--hidden')
+  if (!cardData.showAnswer) {
+    cardAnswer.classList.add('card__answer--hidden')
+  }
   cardAnswer.textContent = cardData.answer
   cardSection.appendChild(cardAnswer)
 
@@ -86,16 +111,13 @@ function renderCard(cardData) {
   })
 }
 
-cardData.forEach(element => {
-  renderCard(element)
+appData.forEach(element => {
+  renderCard(element, mainHome)
 })
 
-// get element function
-
-function getEl(selector) {
-  const el = document.querySelector(selector)
-  return el
-}
+appDataBookmarked.forEach(element => {
+  renderCard(element, mainBookmarks)
+})
 
 // navigation events
 
@@ -130,13 +152,6 @@ addButtonEventListener('profile')
 
 // answer & boomark buttons
 
-// get all elements function
-
-function getElAll(selector) {
-  const el = document.querySelectorAll(selector)
-  return el
-}
-
 // get card bookmarks
 
 const bookmarks = getElAll('.card__bookmark')
@@ -166,3 +181,19 @@ for (let i = 0; i < bookmarks.length; i++) {
     bookmarks[i].classList.toggle('card__bookmark--marked')
   })
 }
+
+// create answer function (not working as intended right now)
+
+function addQuestion(question, answer, isBookmarked, showAnswer, tags) {
+  appData.push(question, answer, isBookmarked, showAnswer, tags)
+}
+
+document.querySelector('.create__button').addEventListener('click', () => {
+  addQuestion({
+    question: 'How do you write 2 in binary?',
+    answer: '10',
+    isBookmarked: false,
+    showAnswer: false,
+    tags: ['fun', 'books', 'pop culture'],
+  })
+})
